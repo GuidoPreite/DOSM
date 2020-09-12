@@ -1,0 +1,60 @@
+/* Change aspect of standard HTML objects */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+hr {
+    border-top: 1px solid #C9C9C9;
+}
+
+button {
+    margin-right: 8px;
+}
+
+    button[disabled] {
+        cursor: not-allowed;
+    }
+
+/* custom classes */
+.spacer {
+    margin: 16px;
+}
+
+.block {
+    display: inline-block;
+}
+
+.notice {
+    font-size: 12px;
+}
+
+.notice-red {
+    color: red;
+    font-weight: bold;
+}
+
+.mapping-container {
+    border: 1px solid #828282;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* bootstrap-select disabled item */
+.dropdown-menu li.disabled {
+    cursor: not-allowed;
+}
+/* bootstrap-select add margin */
+div.bootstrap-select {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+/* bootbox.js show longer content */
+.modal-body {
+    max-height: 500px;
+    overflow-y: auto;
+}
