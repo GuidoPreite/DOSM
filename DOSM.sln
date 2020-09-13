@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1082
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BD1FA533-0E1D-4296-9447-3AA4A0936905}"
+	ProjectSection(SolutionItems) = preProject
+		dosm_manager.htm = dosm_manager.htm
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{B8955F19-F28E-439E-9797-994BB2EDE9D7}"
+	ProjectSection(SolutionItems) = preProject
+		js\dosm.common.js = js\dosm.common.js
+		js\dosm.common.map.js = js\dosm.common.map.js
+		js\dosm.common.xml.js = js\dosm.common.xml.js
+		js\dosm.common.xrm.js = js\dosm.common.xrm.js
+		js\dosm.initialize.js = js\dosm.initialize.js
+		js\dosm.logic.clonejson.js = js\dosm.logic.clonejson.js
+		js\dosm.logic.copyconfiguration.js = js\dosm.logic.copyconfiguration.js
+		js\dosm.logic.createjson.js = js\dosm.logic.createjson.js
+		js\dosm.logic.deletejson.js = js\dosm.logic.deletejson.js
+		js\dosm.logic.editconfiguration.js = js\dosm.logic.editconfiguration.js
+		js\dosm.logic.removeconfiguration.js = js\dosm.logic.removeconfiguration.js
+		js\dosm.logic.showconfiguration.js = js\dosm.logic.showconfiguration.js
+		js\dosm.logic.showfields.js = js\dosm.logic.showfields.js
+		js\dosm.logic.upgradeconfiguration.js = js\dosm.logic.upgradeconfiguration.js
+		js\dosm.models.js = js\dosm.models.js
+		js\dosm.namespaces.js = js\dosm.namespaces.js
+		js\dosm.ui.js = js\dosm.ui.js
+		js\dosm.utilities.js = js\dosm.utilities.js
+		js\dosm.xrm.getdemodata.js = js\dosm.xrm.getdemodata.js
+		js\dosm.xrm.js = js\dosm.xrm.js
+		js\dosm_DependentOptionSet.js = js\dosm_DependentOptionSet.js
+		js\dosm_requirements.js = js\dosm_requirements.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{FA74D808-8761-4884-8078-CF475B4D4B31}"
+	ProjectSection(SolutionItems) = preProject
+		css\dosm_custom.css = css\dosm_custom.css
+		css\dosm_requirements.css = css\dosm_requirements.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{DEE81ECD-9A4F-4AFA-AEF0-548390FC5CBA}"
+	ProjectSection(SolutionItems) = preProject
+		img\dosm_icon.png = img\dosm_icon.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B8955F19-F28E-439E-9797-994BB2EDE9D7} = {BD1FA533-0E1D-4296-9447-3AA4A0936905}
+		{FA74D808-8761-4884-8078-CF475B4D4B31} = {BD1FA533-0E1D-4296-9447-3AA4A0936905}
+		{DEE81ECD-9A4F-4AFA-AEF0-548390FC5CBA} = {BD1FA533-0E1D-4296-9447-3AA4A0936905}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E03829A9-5337-4913-86A3-1F9FF16D7508}
+	EndGlobalSection
+EndGlobal
