@@ -293,7 +293,7 @@ DOSM.Logic.CopyConfiguration.Start = function () {
                             .done(function (data) {
                                 var dependentFormIds = DOSM.Common.MapFormDependentComponents(data);
                                 if (dependentFormIds.length == 0) {
-                                    DOSM.UI.Show("Copy Configuration", "Web Resource <b>" + DOSM.Settings.NewLibraryName + "</b> not used, no configurations to copy.");
+                                    DOSM.UI.Show("Copy Configuration", "Dependent Option Set Manager Solution not used, no Configurations to copy.");
                                 } else {
                                     DOSM.Common.RetrieveForms(dependentFormIds)
                                         .done(function (data) {

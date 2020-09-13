@@ -146,7 +146,7 @@ DOSM.Logic.ShowConfiguration.Start = function () {
                     .done(function (data) {
                         var dependentFormIds = DOSM.Common.MapFormDependentComponents(data);
                         if (dependentFormIds.length == 0) {
-                            DOSM.UI.Show("Show Configuration", "Web Resource <b>" + DOSM.Settings.NewLibraryName + "</b> not used, no Configurations to show.");
+                            DOSM.UI.Show("Show Configuration", "Dependent Option Set Manager Solution not used, no Configurations to show.");
                         } else {
                             DOSM.Common.RetrieveForms(dependentFormIds)
                                 .done(function (data) {

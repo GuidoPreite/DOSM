@@ -122,7 +122,7 @@ DOSM.Logic.RemoveConfiguration.Start = function () {
                     .done(function (data) {
                         var dependentFormIds = DOSM.Common.MapFormDependentComponents(data);
                         if (dependentFormIds.length == 0) {
-                            DOSM.UI.Show("Remove Configuration not necessary", "Dependent Option Set Manager Solution not used, Remove process is not necessary");
+                            DOSM.UI.Show("Remove Configuration not necessary", "Dependent Option Set Manager Solution not used, Remove process is not necessary.");
                         } else {
                             DOSM.Common.RetrieveForms(dependentFormIds)
                                 .done(function (data) {

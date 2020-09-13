@@ -2588,7 +2588,7 @@ DOSM.Logic.ShowConfiguration.Start = function () {
                     .done(function (data) {
                         var dependentFormIds = DOSM.Common.MapFormDependentComponents(data);
                         if (dependentFormIds.length == 0) {
-                            DOSM.UI.Show("Show Configuration", "Web Resource <b>" + DOSM.Settings.NewLibraryName + "</b> not used, no Configurations to show.");
+                            DOSM.UI.Show("Show Configuration", "Dependent Option Set Manager Solution not used, no Configurations to show.");
                         } else {
                             DOSM.Common.RetrieveForms(dependentFormIds)
                                 .done(function (data) {
@@ -3949,7 +3949,7 @@ DOSM.Logic.CopyConfiguration.Start = function () {
                             .done(function (data) {
                                 var dependentFormIds = DOSM.Common.MapFormDependentComponents(data);
                                 if (dependentFormIds.length == 0) {
-                                    DOSM.UI.Show("Copy Configuration", "Web Resource <b>" + DOSM.Settings.NewLibraryName + "</b> not used, no configurations to copy.");
+                                    DOSM.UI.Show("Copy Configuration", "Dependent Option Set Manager Solution not used, no Configurations to copy.");
                                 } else {
                                     DOSM.Common.RetrieveForms(dependentFormIds)
                                         .done(function (data) {
@@ -4126,7 +4126,7 @@ DOSM.Logic.RemoveConfiguration.Start = function () {
                     .done(function (data) {
                         var dependentFormIds = DOSM.Common.MapFormDependentComponents(data);
                         if (dependentFormIds.length == 0) {
-                            DOSM.UI.Show("Remove Configuration not necessary", "Dependent Option Set Manager Solution not used, Remove process is not necessary");
+                            DOSM.UI.Show("Remove Configuration not necessary", "Dependent Option Set Manager Solution not used, Remove process is not necessary.");
                         } else {
                             DOSM.Common.RetrieveForms(dependentFormIds)
                                 .done(function (data) {
