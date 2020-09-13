@@ -18,7 +18,9 @@ if (typeof (DOSM.Logic.CloneJSON) == "undefined") { DOSM.Logic.CloneJSON = {}; }
 if (typeof (DOSM.Logic.DeleteJSON) == "undefined") { DOSM.Logic.DeleteJSON = {}; } // Delete JSON Functions
 if (typeof (DOSM.Logic.ShowFields) == "undefined") { DOSM.Logic.ShowFields = {}; } // Show Fields Functions
 if (typeof (DOSM.Logic.UpgradeConfiguration) == "undefined") { DOSM.Logic.UpgradeConfiguration = {}; } // Upgrade Configuration Functions
-// #endregion﻿// #region DOSM.Utilities
+// #endregion  
+ 
+﻿// #region DOSM.Utilities
 /**
  * Returns true if a parameter is not undefined, not null and not an empty string, otherwise returns false
  * @param {any} parameter Parameter to check
@@ -186,7 +188,9 @@ DOSM.Utilities.CustomSort = function (property) {
         return result * sortOrder;
     }
 }
-// #endregion﻿// #region DOSM.Xrm.GetDemoData
+// #endregion  
+ 
+﻿// #region DOSM.Xrm.GetDemoData
 /**
  * Get Demo Data based on parameters
  * @param {string} entitySetName Entity Set Name
@@ -564,7 +568,9 @@ DOSM.Xrm.GetDemoData = function (entitySetName, filters, singleRecord) {
     }
     return fakeData;
 }
-// #endregion﻿// #region DOSM.Models
+// #endregion  
+ 
+﻿// #region DOSM.Models
 /**
  * Dropdown Option Model
  * @param {any} value Value
@@ -762,7 +768,9 @@ DOSM.Models.Records = function (records) {
         return recordsDropdown;
     }
 }
-// #endregion// #region DOSM.UI
+// #endregion  
+ 
+// #region DOSM.UI
 
 // #region jQuery Helpers
 /**
@@ -1127,7 +1135,9 @@ DOSM.UI.CreateDropdown = function (id, multiSelect, actionBox) {
     return $("<select>", selectProperties);
 }
 // #endregion
-// #endregion﻿// #region DOSM.Xrm
+// #endregion  
+ 
+﻿// #region DOSM.Xrm
 // #region Main Methods
 /**
  * Get Main Xrm Object
@@ -1477,7 +1487,9 @@ DOSM.Xrm.PublishXml = function (parameterXml) {
     }
 }
 // #endregion
-// #endregion// #region DOSM.Common.Xrm
+// #endregion  
+ 
+// #region DOSM.Common.Xrm
 // #region Add Solution Component Functions
 /**
  * Add a Web Resource to a Solution
@@ -1714,7 +1726,9 @@ DOSM.Common.UpdateWebResource = function (webResourceId, webResourceData) {
     return DOSM.Xrm.UpdateRecord("webresourceset", webResourceId, webResourceData);
 }
 // #endregion
-// #endregion// #region DOSM.Common.Map
+// #endregion  
+ 
+// #region DOSM.Common.Map
 /**
  * Map Entities
  * @param {any} data Data to parse
@@ -1856,7 +1870,9 @@ DOSM.Common.MapWebResources = function (data, sortProperty) {
     // return the array
     return webResources;
 }
-// #endregion// #region DOSM.Common.Xml
+// #endregion  
+ 
+// #region DOSM.Common.Xml
 /**
  * Add a configuration inside Form Xml
  * @param {string} configurationPath Configuration Path
@@ -2044,7 +2060,9 @@ DOSM.Common.GetFieldsFromXml = function (formXml) {
     });
     return fields;
 }
-// #endregion// #region DOSM.Common
+// #endregion  
+ 
+// #region DOSM.Common
 /**
  * Get the error message from an xhr object
  * @param {any} xhr xhr Object
@@ -2420,7 +2438,9 @@ DOSM.Common.BindWebResourcePath = function (id) {
         });
     });
 }
-// #endregion// #region DOSM.Logic.ShowConfiguration
+// #endregion  
+ 
+// #region DOSM.Logic.ShowConfiguration
 /**
  * Show Configuration Bind Parent
  * @param {string} parentElementId Parent Element Id
@@ -2620,7 +2640,9 @@ DOSM.Logic.ShowConfiguration.Start = function () {
             .fail(function (xhr) { DOSM.UI.ShowError("DOSM.Common.RetrieveWebResource Error", DOSM.Common.GetErrorMessage(xhr)); });
     }, DOSM.Settings.TimeoutDelay);
 }
-// #endregion// #region DOSM.Logic.EditConfiguration
+// #endregion  
+ 
+// #region DOSM.Logic.EditConfiguration
 /**
  * Edit Configuration Process
  */
@@ -3630,7 +3652,9 @@ DOSM.Logic.EditConfiguration.Start = function (selectedWebResource) {
         }, DOSM.Settings.TimeoutDelay);
     }
 }
-// #endregion// #region DOSM.Logic.CopyConfiguration
+// #endregion  
+ 
+// #region DOSM.Logic.CopyConfiguration
 /**
  * Add configuration defined inside the Web Resource to the passed Forms
  * @param {DOSM.Models.WebResource} webResource Web Resource
@@ -3976,7 +4000,9 @@ DOSM.Logic.CopyConfiguration.Start = function () {
             .fail(function (xhr) { DOSM.UI.ShowError("DOSM.Common.RetrieveEntities Error", DOSM.Common.GetErrorMessage(xhr)); });
     }, DOSM.Settings.TimeoutDelay);
 }
-// #endregion// #region DOSM.Logic.RemoveConfiguration
+// #endregion  
+ 
+// #region DOSM.Logic.RemoveConfiguration
 /*
  * Remove Configuration Show Process
  */
@@ -4125,7 +4151,9 @@ DOSM.Logic.RemoveConfiguration.Start = function () {
             .fail(function (xhr) { DOSM.UI.ShowError("DOSM.Common.RetrieveWebResource Error", DOSM.Common.GetErrorMessage(xhr)); });
     }, DOSM.Settings.TimeoutDelay);
 }
-// #endregion// #region DOSM.Logic.CreateJSON
+// #endregion  
+ 
+// #region DOSM.Logic.CreateJSON
 /**
  * Create JSON Process
  */
@@ -4282,7 +4310,9 @@ DOSM.Logic.CreateJSON.Start = function () {
     }, DOSM.Settings.TimeoutDelay);
 
 }
-// #endregion// #region DOSM.Logic.CloneJSON
+// #endregion  
+ 
+// #region DOSM.Logic.CloneJSON
 /**
  * Clone Web Resource Process
  */
@@ -4501,7 +4531,9 @@ DOSM.Logic.CloneJSON.Start = function () {
             .fail(function (xhr) { DOSM.UI.ShowError("DOSM.Common.RetrieveSolutions Error", DOSM.Common.GetErrorMessage(xhr)); });
     }, DOSM.Settings.TimeoutDelay);
 }
-// #endregion// #region DOSM.Logic.DeleteJSON
+// #endregion  
+ 
+// #region DOSM.Logic.DeleteJSON
 /**
  * Delete JSON Process
  */
@@ -4667,7 +4699,9 @@ DOSM.Logic.DeleteJSON.Start = function () {
             .fail(function (xhr) { DOSM.UI.ShowError("DOSM.Common.RetrieveSolutions Error", DOSM.Common.GetErrorMessage(xhr)); });
     }, DOSM.Settings.TimeoutDelay);
 }
-// #endregion// #region DOSM.Logic.ShowFields
+// #endregion  
+ 
+// #region DOSM.Logic.ShowFields
 /**
  * Bind Entity dropdown to Entity Field, Entity Field Value, Form and Form Field dropdowns
  * Retrieve Fields and Forms of the selected Entity
@@ -4812,7 +4846,9 @@ DOSM.Logic.ShowFields.Start = function () {
             .fail(function (xhr) { DOSM.UI.ShowError("DOSM.Common.RetrieveEntities Error", DOSM.Common.GetErrorMessage(xhr)); });
     }, DOSM.Settings.TimeoutDelay);
 }
-// #endregion// #region DOSM.Logic.UpgradeConfiguration
+// #endregion  
+ 
+// #region DOSM.Logic.UpgradeConfiguration
 
 /**
  * Upgrade Configuration Process
@@ -4938,7 +4974,9 @@ DOSM.Logic.UpgradeConfiguration.Start = function () {
             .fail(function () { DOSM.UI.Show("Upgrade not necessary", "Dependent OptionSet Generator Solution not found, Upgrade process is not necessary.", "large"); });
     }, DOSM.Settings.TimeoutDelay);
 }
-// #endregion// #region DOSM.Initialize
+// #endregion  
+ 
+// #region DOSM.Initialize
 /**
  * Set Default Settings
  */
@@ -5026,4 +5064,5 @@ DOSM.Initialize = function () {
     DOSM.SetDefaultSettings();
     DOSM.DefineOperations();
 }
-// #endregion
+// #endregion  
+ 
