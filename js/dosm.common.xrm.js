@@ -131,7 +131,7 @@ DOSM.Common.RetrieveFormsByEntityLogicalName = function (entityLogicalName) {
 
 /**
  * Retrieve Solutions
- * @param {boolean} includeManaged If the query should include Managaged Solutions
+ * @param {boolean} includeManaged If the query should include Managed Solutions
  */
 DOSM.Common.RetrieveSolutions = function (includeManaged) {
     if (includeManaged == true) {
@@ -153,7 +153,7 @@ DOSM.Common.RetrieveWebResource = function (webResourceId, webResourceFilters) {
 /**
  * Retrieve Web Resources of a Solution
  * @param {string} solutionId Solution Id
- * @param {boolean} includeManaged If the query should include Managaged Web Resources
+ * @param {boolean} includeManaged If the query should include Managed Web Resources
  */
 DOSM.Common.RetrieveSolutionWebResources = function (solutionId, includeManaged) {
     var fetch_Pre = [
