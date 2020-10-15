@@ -229,12 +229,13 @@ DOSM.Common.SetOptionSetsInsideEntities = function (data, entities) {
         context.value.forEach(function (record) {
             var fieldLogicalName = record["LogicalName"];
             var fieldDisplayName = record["SchemaName"];
-            if (record["DisplayName"] != null && record["DisplayName"]["UserLocalizedLabel"] != null) { fieldDisplayName = record["DisplayName"]["UserLocalizedLabel"]["Label"]; }
+            if (record["DisplayName"] != null && record["DisplayName"]["UserLocalizedLabel"] != null && record["DisplayName"]["UserLocalizedLabel"]["Label"] != null) { fieldDisplayName = record["DisplayName"]["UserLocalizedLabel"]["Label"]; }
 
             var field = new DOSM.Models.OptionSet(fieldLogicalName, fieldDisplayName, multiSelect);
             record.OptionSet.Options.forEach(function (option) {
                 var optionValue = option.Value.toString();
-                var optionName = option.Label.UserLocalizedLabel.Label;
+                var optionName = "(No Name)";
+                if (option["Label"] != null && option["Label"]["UserLocalizedLabel"] != null && option["Label"]["UserLocalizedLabel"]["Label"] != null) { optionName = option["Label"]["UserLocalizedLabel"]["Label"]; }
                 field.Values.push(new DOSM.Models.OptionSetValue(optionValue, optionName));
             });
             fields.push(field);

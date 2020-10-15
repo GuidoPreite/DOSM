@@ -955,7 +955,16 @@ DOSM.Logic.EditConfiguration.SelectWebResource = function (webResource) {
  */
 DOSM.Logic.EditConfiguration.Start = function (selectedWebResource) {
     // Metadata used inside EditConfiguration
-    // DOSM.Metadata.X
+    // DOSM.Metadata.Entities
+    // DOSM.Metadata.FilteredTargetForms
+    // DOSM.Metadata.FormIdsToExclude
+    // DOSM.Metadata.FormNotConfigured
+    // DOSM.Metadata.Mappings
+    // DOSM.Metadata.SelectedEntity
+    // DOSM.Metadata.UsedEntities
+    // DOSM.Metadata.UsedForms
+    // DOSM.Metadata.UsedWebResource
+    // DOSM.Metadata.WebResources
 
     // clear the DOSM.Metadata namespace
     DOSM.Metadata = {};
@@ -1004,7 +1013,7 @@ DOSM.Logic.EditConfiguration.Start = function (selectedWebResource) {
                     // hide loading
                     DOSM.UI.HideLoading();
                 })
-                .fail(function (xhr) { DOSM.UI.ShowError("DOSM.Common.RefreshSolutions Error", DOSM.Common.GetErrorMessage(xhr)); });
+                .fail(function (xhr) { DOSM.UI.ShowError("DOSM.Common.RetrieveSolutions Error", DOSM.Common.GetErrorMessage(xhr)); });
         }, DOSM.Settings.TimeoutDelay);
     }
 }

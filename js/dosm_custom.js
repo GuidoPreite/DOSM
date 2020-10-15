@@ -1648,7 +1648,7 @@ DOSM.Common.RetrieveWebResource = function (webResourceId, webResourceFilters) {
  */
 DOSM.Common.RetrieveSolutionWebResources = function (solutionId, includeManaged) {
     var fetch_Pre = [
-        "<fetch distinct='true'>",
+        "<fetch>",
         "  <entity name='webresource'>",
         "    <attribute name='content'/>",
         "    <attribute name='name'/>",
@@ -1674,7 +1674,7 @@ DOSM.Common.RetrieveSolutionWebResources = function (solutionId, includeManaged)
 
     if (includeManaged == true) { fetch_Conditions = []; }
     var fetchXmlWebResources = fetch_Pre.concat(fetch_Conditions, fetch_Post).join("");
-    return DOSM.Xrm.RetrieveFetchXml("webresourceset", fetchXmlWebResources)
+    return DOSM.Xrm.RetrieveFetchXml("webresourceset", fetchXmlWebResources);
 }
 
 /**
@@ -1741,7 +1741,7 @@ DOSM.Common.MapEntities = function (data, sortProperty) {
     data.value.forEach(function (record) {
         var logicalName = record["LogicalName"];
         var name = record["SchemaName"];
-        if (record["DisplayName"] != null && record["DisplayName"]["UserLocalizedLabel"] != null) { name = record["DisplayName"]["UserLocalizedLabel"]["Label"]; }
+        if (record["DisplayName"] != null && record["DisplayName"]["UserLocalizedLabel"] != null && record["DisplayName"]["UserLocalizedLabel"]["Label"] != null) { name = record["DisplayName"]["UserLocalizedLabel"]["Label"]; }
         entities.push(new DOSM.Models.Entity(logicalName, name));
     });
     // eventually sort the array based on the provided sortPrperty
@@ -2293,12 +2293,13 @@ DOSM.Common.SetOptionSetsInsideEntities = function (data, entities) {
         context.value.forEach(function (record) {
             var fieldLogicalName = record["LogicalName"];
             var fieldDisplayName = record["SchemaName"];
-            if (record["DisplayName"] != null && record["DisplayName"]["UserLocalizedLabel"] != null) { fieldDisplayName = record["DisplayName"]["UserLocalizedLabel"]["Label"]; }
+            if (record["DisplayName"] != null && record["DisplayName"]["UserLocalizedLabel"] != null && record["DisplayName"]["UserLocalizedLabel"]["Label"] != null) { fieldDisplayName = record["DisplayName"]["UserLocalizedLabel"]["Label"]; }
 
             var field = new DOSM.Models.OptionSet(fieldLogicalName, fieldDisplayName, multiSelect);
             record.OptionSet.Options.forEach(function (option) {
                 var optionValue = option.Value.toString();
-                var optionName = option.Label.UserLocalizedLabel.Label;
+                var optionName = "(No Name)";
+                if (option["Label"] != null && option["Label"]["UserLocalizedLabel"] != null && option["Label"]["UserLocalizedLabel"]["Label"] != null) { optionName = option["Label"]["UserLocalizedLabel"]["Label"]; }
                 field.Values.push(new DOSM.Models.OptionSetValue(optionValue, optionName));
             });
             fields.push(field);
@@ -3599,7 +3600,16 @@ DOSM.Logic.EditConfiguration.SelectWebResource = function (webResource) {
  */
 DOSM.Logic.EditConfiguration.Start = function (selectedWebResource) {
     // Metadata used inside EditConfiguration
-    // DOSM.Metadata.X
+    // DOSM.Metadata.Entities
+    // DOSM.Metadata.FilteredTargetForms
+    // DOSM.Metadata.FormIdsToExclude
+    // DOSM.Metadata.FormNotConfigured
+    // DOSM.Metadata.Mappings
+    // DOSM.Metadata.SelectedEntity
+    // DOSM.Metadata.UsedEntities
+    // DOSM.Metadata.UsedForms
+    // DOSM.Metadata.UsedWebResource
+    // DOSM.Metadata.WebResources
 
     // clear the DOSM.Metadata namespace
     DOSM.Metadata = {};
@@ -3648,7 +3658,7 @@ DOSM.Logic.EditConfiguration.Start = function (selectedWebResource) {
                     // hide loading
                     DOSM.UI.HideLoading();
                 })
-                .fail(function (xhr) { DOSM.UI.ShowError("DOSM.Common.RefreshSolutions Error", DOSM.Common.GetErrorMessage(xhr)); });
+                .fail(function (xhr) { DOSM.UI.ShowError("DOSM.Common.RetrieveSolutions Error", DOSM.Common.GetErrorMessage(xhr)); });
         }, DOSM.Settings.TimeoutDelay);
     }
 }

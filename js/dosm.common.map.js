@@ -11,7 +11,7 @@ DOSM.Common.MapEntities = function (data, sortProperty) {
     data.value.forEach(function (record) {
         var logicalName = record["LogicalName"];
         var name = record["SchemaName"];
-        if (record["DisplayName"] != null && record["DisplayName"]["UserLocalizedLabel"] != null) { name = record["DisplayName"]["UserLocalizedLabel"]["Label"]; }
+        if (record["DisplayName"] != null && record["DisplayName"]["UserLocalizedLabel"] != null && record["DisplayName"]["UserLocalizedLabel"]["Label"] != null) { name = record["DisplayName"]["UserLocalizedLabel"]["Label"]; }
         entities.push(new DOSM.Models.Entity(logicalName, name));
     });
     // eventually sort the array based on the provided sortPrperty

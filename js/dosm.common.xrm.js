@@ -157,7 +157,7 @@ DOSM.Common.RetrieveWebResource = function (webResourceId, webResourceFilters) {
  */
 DOSM.Common.RetrieveSolutionWebResources = function (solutionId, includeManaged) {
     var fetch_Pre = [
-        "<fetch distinct='true'>",
+        "<fetch>",
         "  <entity name='webresource'>",
         "    <attribute name='content'/>",
         "    <attribute name='name'/>",
@@ -183,7 +183,7 @@ DOSM.Common.RetrieveSolutionWebResources = function (solutionId, includeManaged)
 
     if (includeManaged == true) { fetch_Conditions = []; }
     var fetchXmlWebResources = fetch_Pre.concat(fetch_Conditions, fetch_Post).join("");
-    return DOSM.Xrm.RetrieveFetchXml("webresourceset", fetchXmlWebResources)
+    return DOSM.Xrm.RetrieveFetchXml("webresourceset", fetchXmlWebResources);
 }
 
 /**
