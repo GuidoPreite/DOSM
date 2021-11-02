@@ -112,6 +112,7 @@ DOSM.LoadConfiguration = function (executionContext, webResourcePath) {
                     var sortedFields = {};
                     var allParents = [];
                     var allChildren = [];
+                    var allFields = [];
                     DOSM.Metadata.Dependencies.forEach(function (dependency) {
                         // we need to make sure the sorting is the same if the field is present more than one time (like parent and child in two different dependencies)
                         // check dependency.parent
@@ -142,7 +143,21 @@ DOSM.LoadConfiguration = function (executionContext, webResourcePath) {
 
                         if (allParents.indexOf(dependency.parent) == -1) { allParents.push(dependency.parent); }
                         if (allChildren.indexOf(dependency.child) == -1) { allChildren.push(dependency.child); }
+
+                        if (allFields.indexOf(dependency.parent) == -1) { allFields.push(dependency.parent); }
+                        if (allFields.indexOf(dependency.child) == -1) { allFields.push(dependency.child); }
                     });
+
+                    // check if all the involved fields are disabled
+                    var allDisabledFields = true;
+                    allFields.forEach(function (checkField) {
+                        var checkAttributeField = formContext.getAttribute(checkField);
+                        checkAttributeField.controls.forEach(function (control) {
+                            if (control.getDisabled() == false) { allDisabledFields = false; }
+                        });
+                    });
+                    // all involved fields are disabled, do nothing
+                    if (allDisabledFields == true) { return; }
 
                     // get the fields that are only parents
                     var onlyParents = [];
